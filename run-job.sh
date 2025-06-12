@@ -1,9 +1,5 @@
 #!/bin/bash
 
-# Clone repo
-git clone https://github.com/Elasfer-Abdellah/My-code.git
-cd My-code/MapReduce/Activity3
-
 # Start Hadoop cluster
 docker-compose up -d
 
@@ -15,7 +11,7 @@ docker exec namenode hdfs dfs -mkdir -p /input
 docker exec namenode hdfs dfs -mkdir -p /output
 
 # Copy JAR to container
-docker cp target/Activity3-1.0-SNAPSHOT.jar namenode:/tmp/
+docker cp Activity3-1.0-SNAPSHOT.jar namenode:/tmp/
 
 # Run MapReduce job
 docker exec namenode \
