@@ -1,2 +1,5 @@
-/workspaces/My-code/MapReduce_Lab3/Activity3/src/main/java/Elasfer/App.java
+/workspaces/My-code/MapReduce_Lab3/Activity3/src/main/java/Elasfer/FakeInputSplit.java
 /workspaces/My-code/MapReduce_Lab3/Activity3/src/main/java/Elasfer/Point2DWritable.java
+/workspaces/My-code/MapReduce_Lab3/Activity3/src/main/java/Elasfer/RandomPointGeneratorJob.java
+/workspaces/My-code/MapReduce_Lab3/Activity3/src/main/java/Elasfer/RandomPointInputFormat.java
+/workspaces/My-code/MapReduce_Lab3/Activity3/src/main/java/Elasfer/RandomPointReader.java

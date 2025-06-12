@@ -1,2 +1,7 @@
-src/main/java/Elasfer/App.class
+Elasfer/RandomPointReader.class
+Elasfer/FakeInputSplit.class
+Elasfer/RandomPointGeneratorJob.class
+Elasfer/RandomPointGeneratorJob$PointFileWriterReducer.class
 Elasfer/Point2DWritable.class
+Elasfer/RandomPointInputFormat.class
+Elasfer/RandomPointGeneratorJob$PointGeneratorMapper.class
