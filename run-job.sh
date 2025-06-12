@@ -15,7 +15,7 @@ docker cp ./MapReduce_Lab3/Activity3/target/Activity3-1.0-SNAPSHOT.jar namenode:
 
 # Run MapReduce job
 docker exec namenode \
-  hadoop jar /tmp/Activity3-1.0-SNAPSHOT.jar Elasfer.RandomPointGeneratorJob /output/points 1000 10
+  bash -c "hadoop jar /tmp/Activity3-1.0-SNAPSHOT.jar Elasfer.RandomPointGeneratorJob /output/points 1000 10"
 
 # View results
 echo "Job output:"
