@@ -8,7 +8,7 @@ cd My-code/MapReduce/Activity3
 docker-compose up -d
 
 # Wait for cluster to initialize
-sleep 60
+sleep 30
 
 # Prepare HDFS
 docker exec namenode hdfs dfs -mkdir -p /input
