@@ -10,9 +10,8 @@ sleep 30
 docker exec namenode hdfs dfs -mkdir -p /input
 docker exec namenode hdfs dfs -mkdir -p /output
 
-find . -name "*.jar"
 # Copy JAR to container
-docker cp Activity3-1.0-SNAPSHOT.jar namenode:/tmp/
+docker cp ./MapReduce_Lab3/Activity3/target/Activity3-1.0-SNAPSHOT.jar namenode:/tmp/
 
 # Run MapReduce job
 docker exec namenode \
