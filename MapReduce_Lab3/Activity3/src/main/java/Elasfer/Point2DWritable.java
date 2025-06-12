@@ -1,3 +1,5 @@
+package Elasfer;
+
 import java.io.DataInput;
 import java.io.DataOutput;
 import java.io.IOException;
@@ -43,13 +45,13 @@ public class Point2DWritable extends Point2D.Double implements Writable {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Point2DWritable obj = (Point2DWritable) o;
-        return Double.compare(obj.x, x) == 0 && Double.compare(obj.y, y) == 0;
+        return java.lang.Double.compare(x, obj.x) == 0 && java.lang.Double.compare(y, obj.y) == 0;
     }
 
     @Override
     public int hashCode() {
-        long xBits = Double.doubleToLongBits(x);
-        long yBits = Double.doubleToLongBits(y);
+        long xBits = java.lang.Double.doubleToLongBits(x);
+        long yBits = java.lang.Double.doubleToLongBits(y);
         return (int) (xBits ^ (xBits >>> 32) ^ yBits ^ (yBits >>> 32));
     }
 }
