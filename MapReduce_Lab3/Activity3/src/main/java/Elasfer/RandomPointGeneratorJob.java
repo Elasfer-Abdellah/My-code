@@ -44,6 +44,12 @@ public class RandomPointGeneratorJob {
     
     // Main method to set up and run the job
     public static void main(String[] args) throws Exception {
+        // Display Inputed Arguments:
+        System.out.println("Arguments reçus (" + args.length + "):");
+        for (int i = 0; i < args.length; i++) {
+            System.out.println("args[" + i + "] = " + args[i]);
+        }
+
         // This job expects three arguments:
         if (args.length != 3) {
             System.err.println("Usage: RandomPointGeneratorJob <output_path> <num_points> <num_splits>");
