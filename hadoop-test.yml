@@ -1,0 +1,36 @@
+name: Hadoop Cluster Test
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  hadoop-test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Start Hadoop cluster with Docker Compose
+        run: |
+          # Download the docker-compose file for Hadoop
+          curl -o docker-compose.yml https://raw.githubusercontent.com/big-data-europe/docker-hadoop/master/docker-compose.yml
+          
+          # Start Hadoop containers (Namenode, Datanode, ResourceManager, NodeManager)
+          docker-compose up -d
+          
+          # Wait for Hadoop services to initialize
+          sleep 30
+          
+          # Verify HDFS is running
+          docker exec -it namenode hdfs dfsadmin -report
+          
+          # Run a test job (WordCount example)
+          docker exec -it namenode bash -c \
+            "echo -e 'hello world\nhello hadoop' > input.txt && \
+             hdfs dfs -mkdir -p /input && \
+             hdfs dfs -put input.txt /input && \
+             hadoop jar $HADOOP_HOME/share/hadoop/mapreduce/hadoop-mapreduce-examples-*.jar wordcount /input /output && \
+             hdfs dfs -cat /output/*"
